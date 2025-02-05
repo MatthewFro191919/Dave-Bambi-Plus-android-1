@@ -1470,6 +1470,19 @@ class Character extends FlxSprite
 				loadOffsetFile(curCharacter);
 
 				playAnim('idle');
+			case 'fiz':
+				frames = Paths.getSparrowAtlas('characters/fiz', 'shared');
+				animation.addByPrefix('idle', 'Idle Pose instance', 24);
+				animation.addByPrefix('singUP', 'Up pose instance', 24);
+				animation.addByPrefix('singRIGHT', 'right pose instance', 24);
+				animation.addByPrefix('singDOWN', 'Down Pose instance', 24);
+				animation.addByPrefix('singLEFT', 'left pose instance', 24);
+
+				barColor = FlxColor.fromRGB(89, 86, 94);
+
+				loadOffsetFile(curCharacter);
+
+				playAnim('idle');
 		}
 		dance();
 
