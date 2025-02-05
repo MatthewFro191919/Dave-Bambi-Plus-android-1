@@ -117,6 +117,7 @@ class ChartingState extends MusicBeatState
 	var xoVoice:Bool;
 	var shiVoice:Bool;
 	var carVoice:Bool;
+	var fizVoice:Bool;
 
 	override function create()
 	{
@@ -151,8 +152,8 @@ class ChartingState extends MusicBeatState
 			};
 		}
 
-		shagVoice = PlayState.shaggyVoice;
-		kogVoice = PlayState.kogreVoice;
+	    shagVoice = PlayState.shaggyVoice;
+	    kogVoice = PlayState.kogreVoice;
 	    tailVoice = PlayState.tailsVoice;
 	    conVoice = PlayState.connerVoice;
 	    chipVoice = PlayState.chipflakeVoice;
@@ -162,6 +163,7 @@ class ChartingState extends MusicBeatState
 	    xoVoice = PlayState.xoVoice;
 	    shiVoice = PlayState.shinxVoice;
 	    carVoice = PlayState.carVoice;
+	    fizVoice = PlayState.fizVoice;
 
 		gridBG = FlxGridOverlay.create(GRID_SIZE, GRID_SIZE, GRID_SIZE * 8, GRID_SIZE * 16);
 		add(gridBG);
@@ -548,6 +550,7 @@ class ChartingState extends MusicBeatState
 		vocals = new FlxSound().loadEmbedded(Paths.voices(daSong, xoVoice ? "XO" : ""));
 		vocals = new FlxSound().loadEmbedded(Paths.voices(daSong, shiVoice ? "Shinx" : ""));
 		vocals = new FlxSound().loadEmbedded(Paths.voices(daSong, carVoice ? "Car" : ""));
+		vocals = new FlxSound().loadEmbedded(Paths.voices(daSong, fizVoice ? "Fiz" : ""));
 		
 		// Expunged voice but because it's for the recursed song it goes unused here but I don't really for sure if it goes unused.
 		vocals = new FlxSound().loadEmbedded(Paths.voices(daSong, expVoice ? "Expunged" : ""));
