@@ -494,8 +494,9 @@ class PlayState extends MusicBeatState
 	public static var xoVoice:Bool = false;
 	public static var shinxVoice:Bool = false;
 	public static var carVoice:Bool = false;
+	public static var fizVoice:Bool = false;
 	var isShaggy:Bool = false;
-    var isKogre:Bool = false;
+        var isKogre:Bool = false;
 	var isTails:Bool = false;	
 	var isConner:Bool = false;
 	var isChipFlake:Bool = false;
@@ -505,6 +506,7 @@ class PlayState extends MusicBeatState
 	var isXo:Bool = false;
 	var isShinx:Bool = false;
 	var isCar:Bool = false;
+	var isInstaFiz:Bool = false;
 	var legs:FlxSprite;
 	var shaggyT:FlxTrail;
 	var legT:FlxTrail;
@@ -1151,8 +1153,9 @@ class PlayState extends MusicBeatState
                 isStickyBM = boyfriend.curCharacter == 'sticky';
                 isEevee = boyfriend.curCharacter == 'eevee' || boyfriend.curCharacter == 'eevee-shiny';
                 isXo = boyfriend.curCharacter == 'xo';
-		        isShinx = boyfriend.curCharacter == 'shinx';
+	        isShinx = boyfriend.curCharacter == 'shinx';
                 isCar = boyfriend.curCharacter == 'car';
+                isInstaFiz = boyfriend.curCharacter == 'fiz';
 
 		switch (stageCheck)
 		{
@@ -1327,6 +1330,8 @@ class PlayState extends MusicBeatState
 		shinxVoice = isShinx && ['interdimensional'].contains(SONG.song.toLowerCase());
 
 		carVoice = isCar && ['interdimensional'].contains(SONG.song.toLowerCase());
+
+		fizVoice = isInstaFiz && ['interdimensional'].contains(SONG.song.toLowerCase());
 		generateSong(SONG.song);
 
 		camFollow = new FlxObject(0, 0, 1, 1);
@@ -3548,10 +3553,9 @@ class PlayState extends MusicBeatState
 
 		curSong = songData.song;
 
-		if (SONG.needsVoices)
+		if (isShaggy && SONG.needsVoices)
 			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song, localFunny == CharacterFunnyEffect.Tristan ? "-Tristan" : shaggyVoice ? "Shaggy" : ""));
-		else
-			vocals = new FlxSound();
+		
 		if (isKogre && SONG.needsVoices)
 			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song, localFunny == CharacterFunnyEffect.Tristan ? "-Tristan" : kogreVoice ? "Kogre" : ""));
 
@@ -3581,6 +3585,12 @@ class PlayState extends MusicBeatState
 
 		if (isCar && SONG.needsVoices)
 			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song, localFunny == CharacterFunnyEffect.Tristan ? "-Tristan" : carVoice ? "Car" : ""));
+
+		if (isInstaFiz && SONG.needsVoices)
+			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song, localFunny == CharacterFunnyEffect.Tristan ? "-Tristan" : fizVoice ? "Fiz" : ""));
+		
+		if (SONG.needsVoices)
+			vocals = new FlxSound();
 
 		FlxG.sound.list.add(vocals);
 
