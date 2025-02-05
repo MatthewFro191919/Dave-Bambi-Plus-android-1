@@ -214,9 +214,6 @@ class CharacterSelectState extends MusicBeatState
 		new CharacterInSelect('kapi', [1, 1, 1, 1], [
 			new CharacterForm('kapi', 'Kapi', [1, 1, 1, 1]),
 		]),
-		new CharacterInSelect('fiz', [0, 0, 3, 0], [
-			new CharacterForm('fiz', 'InstaFiz', [0, 0, 3, 0]),
-		]),
 		new CharacterInSelect('question', [0, 0, 3, 0], [
 			new CharacterForm('question-playable', 'Question Bambi', [0, 0, 3, 0]),
 		]),
@@ -254,6 +251,9 @@ class CharacterSelectState extends MusicBeatState
 		new CharacterInSelect('car', [1, 1, 1, 1], [
 			new CharacterForm('car', 'Car (Garn47)', [1,1,1,1]),
 		]),
+		new CharacterInSelect('fiz', [0, 0, 3, 0], [
+			new CharacterForm('fiz', 'InstFiz', [0, 0, 3, 0]),
+		]),
 		new CharacterInSelect('shaggy', [1, 1, 1, 1], [
 			new CharacterForm('shaggy', 'Shaggy', [1, 1, 1, 1]),
 			new CharacterForm('supershaggy', 'Shaggy (0.001%)', [1, 1, 1, 1]),
@@ -290,6 +290,7 @@ class CharacterSelectState extends MusicBeatState
 		unlockCharacter('question');
 		unlockCharacter('question-playable');
 		unlockCharacter('car');
+		unlockCharacter('fiz');
 		if (PlayState.SONG.song.toLowerCase() == 'exploitation' && !FlxG.save.data.modchart)
 		{
 			if (FlxG.fullscreen)
