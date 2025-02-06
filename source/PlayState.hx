@@ -1144,7 +1144,7 @@ class PlayState extends MusicBeatState
 			dadGroup.add(dadmirror);
 		}
 		bfGroup.add(boyfriend);
-		isShaggy = boyfriend.curCharacter == 'shaggy' || boyfriend.curCharacter == 'supershaggy' || boyfriend.curCharacter == 'godshaggy' || boyfriend.curCharacter == 'redshaggy';
+		        isShaggy = boyfriend.curCharacter == 'shaggy' || boyfriend.curCharacter == 'supershaggy' || boyfriend.curCharacter == 'godshaggy' || boyfriend.curCharacter == 'redshaggy';
                 isKogre = boyfriend.curCharacter == 'kogre';
                 isTails = boyfriend.curCharacter == 'tails';
                 isConner = boyfriend.curCharacter == 'conner';
@@ -1153,7 +1153,7 @@ class PlayState extends MusicBeatState
                 isStickyBM = boyfriend.curCharacter == 'sticky';
                 isEevee = boyfriend.curCharacter == 'eevee' || boyfriend.curCharacter == 'eevee-shiny';
                 isXo = boyfriend.curCharacter == 'xo';
-	        isShinx = boyfriend.curCharacter == 'shinx';
+	            isShinx = boyfriend.curCharacter == 'shinx';
                 isCar = boyfriend.curCharacter == 'car';
                 isInstaFiz = boyfriend.curCharacter == 'fiz';
 
@@ -1238,6 +1238,7 @@ class PlayState extends MusicBeatState
 				if (isXo) boyfriend.setPosition(770, 150);
 				if (isShinx) boyfriend.setPosition(770, 150);
 				if (isCar) boyfriend.setPosition(770, 150);
+				if (isInstaFiz) boyfriend.setPosition(770, 150);
 			case 'green-void':
 				if (isShaggy) {
 					boyfriend.x += 150;
@@ -3587,7 +3588,7 @@ class PlayState extends MusicBeatState
 			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song, localFunny == CharacterFunnyEffect.Tristan ? "-Tristan" : carVoice ? "Car" : ""));
 
 		if (isInstaFiz && SONG.needsVoices)
-			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song, localFunny == CharacterFunnyEffect.Tristan ? "-Tristan" : fizVoice ? "Fiz" : ""));
+			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song, localFunny == CharacterFunnyEffect.Tristan ? "-Tristan" : fizVoice ? "InstFiz" : ""));
 		
 		if (SONG.needsVoices)
 			vocals = new FlxSound();
