@@ -3556,41 +3556,62 @@ class PlayState extends MusicBeatState
 
 		if (isShaggy && SONG.needsVoices)
 			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song, localFunny == CharacterFunnyEffect.Tristan ? "-Tristan" : shaggyVoice ? "Shaggy" : ""));
+		else
+			vocals = new FlxSound();
 		
 		if (isKogre && SONG.needsVoices)
 			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song, localFunny == CharacterFunnyEffect.Tristan ? "-Tristan" : kogreVoice ? "Kogre" : ""));
+		else
+			vocals = new FlxSound();
 
 		if (isTails && SONG.needsVoices)
 			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song, localFunny == CharacterFunnyEffect.Tristan ? "-Tristan" : tailsVoice ? "Tails" : ""));
+		else
+			vocals = new FlxSound();
 
 		if (isConner && SONG.needsVoices)
 			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song, localFunny == CharacterFunnyEffect.Tristan ? "-Tristan" : connerVoice ? "Conner" : ""));
+		else
+			vocals = new FlxSound();
 
 		if (isChipFlake && SONG.needsVoices)
 			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song, localFunny == CharacterFunnyEffect.Tristan ? "-Tristan" : chipflakeVoice ? "ChipFlake" : ""));
+		else
+			vocals = new FlxSound();
 
 		if (isExpunged && SONG.needsVoices)
 			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song, localFunny == CharacterFunnyEffect.Tristan ? "-Tristan" : expungedVoice ? "Expunged" : ""));
+		else
+			vocals = new FlxSound();
 
 		if (isStickyBM && SONG.needsVoices)
 			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song, localFunny == CharacterFunnyEffect.Tristan ? "-Tristan" : stickybmVoice ? "StickyBM" : ""));
+		else
+			vocals = new FlxSound();
 
 		if (isEevee && SONG.needsVoices)
 			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song, localFunny == CharacterFunnyEffect.Tristan ? "-Tristan" : eeveeVoice ? "Eevee" : ""));
+		else
+			vocals = new FlxSound();
 
 		if (isXo && SONG.needsVoices)
 			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song, localFunny == CharacterFunnyEffect.Tristan ? "-Tristan" : xoVoice ? "XO" : ""));
+		else
+			vocals = new FlxSound();
 		
 		if (isShinx && SONG.needsVoices)
 			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song, localFunny == CharacterFunnyEffect.Tristan ? "-Tristan" : shinxVoice ? "Shinx" : ""));
+		else
+			vocals = new FlxSound();
 
 		if (isCar && SONG.needsVoices)
 			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song, localFunny == CharacterFunnyEffect.Tristan ? "-Tristan" : carVoice ? "Car" : ""));
+		else
+			vocals = new FlxSound();
 
 		if (isInstaFiz && SONG.needsVoices)
 			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song, localFunny == CharacterFunnyEffect.Tristan ? "-Tristan" : fizVoice ? "InstFiz" : ""));
-		
-		if (SONG.needsVoices)
+		else
 			vocals = new FlxSound();
 
 		FlxG.sound.list.add(vocals);
