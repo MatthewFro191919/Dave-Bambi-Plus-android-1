@@ -49,12 +49,10 @@ jobs:
           haxelib install hxCodec 2.5.1
           haxelib install hscript
           haxelib git lime https://github.com/mcagabe19-stuff/lime
-      - name: Compile (Windows)
-        if: startsWith(matrix.os, 'windows')
+      - name: Compile
         run: haxelib run lime build windows -D officialBuild
 
-      - name: Upload Artifact (Windows)
-        if: startsWith(matrix.os, 'windows')
+      - name: Upload Artifact
         uses: actions/upload-artifact@main
         with:
           name: windowsBuild
